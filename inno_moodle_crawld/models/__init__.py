@@ -1,7 +1,6 @@
-from inno_moodle_crawld.models.assignment import Assignment
 from inno_moodle_crawld.models.course import CourseManager
-from inno_moodle_crawld.models.grade import Grade
+from inno_moodle_crawld.models.grade import GradeManager
 
 __all__ = [
-    'Assignment', 'CourseManager', 'Grade'
+    'CourseManager', 'GradeManager'
 ]

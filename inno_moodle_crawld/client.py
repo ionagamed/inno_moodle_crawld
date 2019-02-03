@@ -3,7 +3,7 @@ from html import unescape
 
 import requests
 
-from inno_moodle_crawld.models import CourseManager
+from inno_moodle_crawld.models import CourseManager, GradeManager
 
 
 class Client(object):
@@ -55,5 +55,12 @@ class Client(object):
     def get_course_list(self):
         return CourseManager.get_list(session=self.session)
 
-    def get_course  (self, course_id):
+    def get_course(self, course_id):
         return CourseManager.get_detail(course_id=course_id, session=self.session)
+
+    def get_course_grades(self, course_id):
+        return GradeManager.get_list(
+            course_id=course_id,
+            user_id=self.user_id,
+            session=self.session
+        )
